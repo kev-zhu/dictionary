@@ -1,0 +1,200 @@
+.container {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.mt-1 { 
+    margin-top: 1%
+}
+
+.mt-2 {
+    margin-top: 2%;
+}
+
+.mt-3 {
+    margin-top: 3%;
+}
+
+.mt-5 {
+    margin-top: 5%;
+}
+
+.hline { 
+    width:90%; 
+    height: 1px; 
+    background: lightgrey;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nav-container, .flex-container {
+    display: flex;
+    flex-wrap: no-wrap;
+}
+
+.source-container { 
+    flex-wrap: no-wrap;
+}
+
+.flex-right {
+    margin-left: auto
+}
+
+.fonts { 
+    border: none;
+    outline: none;
+}   
+
+a, a:hover, a:visited, a:active {
+    color: inherit;
+}
+
+.fa-book, .fa-moon {
+    color: #707070;
+    font-size: 20px;
+}
+
+.switch {
+    top: -10px; /* to put on top of div*/
+    position: relative;
+    display: inline-block;
+    width: 31px;
+    height: 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #707070;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #AE38ED;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #AE38ED;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.search {
+    position: relative;
+    height: 48px;           /* change this later to scalable*/
+}
+
+.wordQuery {
+    width: 100%;
+    height: 100%;           
+    font-size: 20px;        /* change this later to scalable*/
+    font-family: serif;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-indent: 12px;
+    font-weight: bold;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 30%;
+    right: 14px;
+}
+
+.fa-search {
+    color: #AE38ED;
+}
+
+.definitions, .meaning-group, li.def-bulleted .definition, .example {
+    list-style: none;
+}
+
+li.def-bulleted .definition::before {
+    content: "\2022";
+    color: #AE38ED;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.synonyms {
+    color: #AE38ED;
+    font-weight: bold;
+}
+
+.greyfont {
+    color: #909497;
+}
+
+.font-sm { 
+    font-size: 14px;
+}
+
+.icon-sm {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    font-size: 11px;
+}
+
+.fa-circle-play {
+    cursor: pointer;
+    color: #AE38ED;
+    font-size: 60px;
+}
+
+.queriedWord {
+    font-size: 60px;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.pronunciation {
+    font-size: 21px;
+    font-family: serif;
+    color: #AE38ED;
+}
+
+.playPronunciation {
+    margin-top: auto;
+    margin-bottom: auto;
+}

@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="results mt-3">
+    <div class="description flex-container">
+        <div>
+            <div class="queriedWord"></div>
+            <div class="pronunciation mt-1"></div>
+        </div>
+        <div class="playPronunciation flex-right" hidden>
+            <i class="fa-solid fa-circle-play play-audio"></i>
+            <audio class="wordSound" src=""></audio>
+        </div>
+    </div>
+
+    <ul class="definitions"></ul>
+
+    <div class='source source-container' hidden>
+        <div class="greyfont font-sm">Source</div>
+        <a class="src-link font-sm" href=""></a>
+        <a class="src-link">
+            <i class="fa-solid fa-up-right-from-square icon-sm greyfont"></i>
+        </a>
+    </div>
+</div>
+
+
+<script src="{% static 'js/loadSearch.js' %}"></script>
