@@ -20,9 +20,9 @@
 }
 
 .hline { 
-    width:90%; 
+    width:100%; 
     height: 1px; 
-    background: lightgrey;
+    background: #EEEEEE;
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -145,6 +145,7 @@ input:checked+.slider:before {
 
 .definitions, .meaning-group, li.def-bulleted .definition, .example {
     list-style: none;
+    padding-left: 0;
 }
 
 li.def-bulleted .definition::before {
@@ -161,12 +162,29 @@ li.def-bulleted .definition::before {
     font-weight: bold;
 }
 
+span.synonyms {
+    margin-left: 20px;
+}
+
 .greyfont {
+    font-size: 18px;
     color: #909497;
 }
 
 .font-sm { 
     font-size: 14px;
+}
+
+.src-link.font-sm {
+    margin-left: 20px;
+    margin-right: 5px;
+}
+
+.partofspeech {
+    padding-right: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Trebuchet MS';
 }
 
 .icon-sm {

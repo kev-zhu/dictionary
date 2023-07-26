@@ -26,13 +26,9 @@ const loadInfo = (info) => {
 
     info.meanings.forEach(meaning => {
         const posGroup = formatPOS(meaning.partOfSpeech)
-
         const meaningText = formatGrey('Meaning', 3)
 
-        const defItem = document.createElement('li')
-        defItem.classList.add('def-bulleted')
-        defItem.classList.add('mt-2')
-        defItem.appendChild(formatDefinition(meaning))
+        const defItem = formatDefItem(meaning)
 
         definitions.appendChild(posGroup)
         definitions.append(meaningText)
@@ -50,6 +46,7 @@ const loadInfo = (info) => {
         }
     })
 
+
     source.hidden = false
     source.style.display = 'flex'
     srcLinks.forEach(srcLink => {
@@ -66,6 +63,7 @@ const formatPOS = (pos) => {
 
     const partofspeech = document.createElement('li')
     partofspeech.innerHTML = pos
+    partofspeech.classList.add('partofspeech')
 
     const hline = document.createElement('div')
     hline.classList.add('hline')
@@ -85,6 +83,15 @@ const formatGrey = (text, marginAmt) => {
     return formatText
 }
 
+const formatDefItem = (meaning) => {
+    const defItem = document.createElement('li')
+    defItem.classList.add('def-bulleted')
+    defItem.classList.add('mt-2')
+    defItem.appendChild(formatDefinition(meaning))
+
+    return defItem
+}
+
 const formatDefinition = (meaning) => {  
     const defs = document.createElement('ul')
 
@@ -99,6 +106,7 @@ const formatDefinition = (meaning) => {
             const wordExample = document.createElement('li')
             wordExample.classList.add('example')
             wordExample.classList.add('greyfont')
+            wordExample.classList.add('mt-1')
             wordExample.innerHTML = '"' + definition.example +'"'
 
             defs.appendChild(wordExample)
