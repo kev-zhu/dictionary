@@ -20,6 +20,9 @@ for (let c = 0; c < selectCount; c++) {
 
     option.addEventListener('click', () => {
         customSelect.innerHTML = option.innerHTML
+
+        const r = document.querySelector(':root')
+        r.style.setProperty('--word-font', option.innerHTML)
     })
     
     optionsContainer.appendChild(option)
@@ -33,7 +36,6 @@ const showOptions = () => {
     optionsContainer.classList.add('options-shown')
     optionsContainer.style.display = 'block'
     // optionsContainer.style.width = optionsContainer.parentElement.clientWidth + 30
-
 }
 
 const hideOptions = () => {

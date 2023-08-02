@@ -1,3 +1,7 @@
+:root {
+    --word-font: serif
+}
+
 /* for mobile */
 @media only screen and (max-width: 400px) {
     .container {
@@ -181,7 +185,7 @@ input:checked+.slider:before {
     width: 100%;
     height: 100%;           
     font-size: max(20px, 1.2vw);        /* change this later to scalable*/
-    font-family: serif;
+    font-family: var(--word-font);
     border: none;
     outline: none;
     background-color: var(--accessory-color);
@@ -236,12 +240,18 @@ span.synonyms {
 }
 
 .greyfont {
+    font-family: var(--word-font);
     font-size: max(18px, 0.8vw);
     color: var(--grey-font);
     transition: .5s all;
 }
 
+.fa-up-right-from-square {
+    color: var(--fa-icon-color);
+}
+
 .definition {
+    font-family: var(--word-font);
     font-size: max(18px, 0.8vw);
 }
 
@@ -278,13 +288,13 @@ span.synonyms {
 
 .queriedWord {
     font-size: calc(25px + 3vw);
-    font-family: serif;
+    font-family: var(--word-font);
     font-weight: bold;
 }
 
 .pronunciation {
     font-size: max(21px, 1.5vw);
-    font-family: serif;
+    font-family: var(--word-font);
     color: #AE38ED;
 }
 
@@ -342,4 +352,8 @@ span.synonyms {
 
 .option:hover {
     background-color: lightgrey;
+}
+
+.results {
+    display: none;
 }

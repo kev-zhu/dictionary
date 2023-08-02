@@ -1,3 +1,5 @@
+const reuslts = document.querySelector('.results')
+
 const queriedWord = document.querySelector('.queriedWord')
 const pronunciation = document.querySelector('.pronunciation')
 const playPronunciation = document.querySelector('.playPronunciation')
@@ -15,12 +17,10 @@ const clearResults = () => {
 
 const loadInfo = (info) => {
     clearResults()
-
-    console.log(info)
+    reuslts.style.display = 'block'
 
     queriedWord.innerHTML = info.word
     pronunciation.innerHTML = info.phonetic || info.phonetics.reduce((prev, curr) => curr.text !== '' ? curr.text: prev, '')
-    playPronunciation.hidden = false
     
     wordSound.src = info.phonetics.reduce((prev, curr) => curr.audio !== '' ? curr.audio: prev, '')
 
@@ -47,7 +47,6 @@ const loadInfo = (info) => {
     })
 
 
-    source.hidden = false
     source.style.display = 'flex'
     srcLinks.forEach(srcLink => {
         srcLink.href = info.sourceUrls[0]

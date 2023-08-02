@@ -1,13 +1,9 @@
 const searchBtn = document.querySelector('.wordSearch')
 const wordQuery = document.querySelector('.wordQuery')
 
-document.addEventListener('DOMContentLoaded', () => {
-    querySearch()
-})
 
-//revert back later
 const querySearch = () => {
-    fetch(`./query?word=keyboard`)
+    fetch(`./query?word=${wordQuery.value}`)
         .then(res => res.json())
         .then(data => {
             if (data.error) {
