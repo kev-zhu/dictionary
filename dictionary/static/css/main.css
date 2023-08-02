@@ -1,6 +1,42 @@
-.container {
-    padding-left: 25%;
-    padding-right: 25%;
+/* for mobile */
+@media only screen and (max-width: 400px) {
+    .container {
+        padding: 3%
+    }
+}
+
+/* for tablets */
+@media only screen and (min-width: 600px) {
+    .container {
+        padding: 1% 5% 1% 5%;
+    }
+}
+
+/* for desktops */
+@media only screen and (min-width: 900px) {
+    .container {
+        padding: 1% 25% 1% 25%;
+        padding-left: 25%
+    }
+}
+
+body {
+    --background-color: white;
+    --font-color: black;
+    --fa-icon-color: #707070;
+    --accessory-color: rgb(239, 239, 239);
+    --grey-font: #909497;
+
+    background-color: var(--background-color);
+    transition: .5s all;
+}
+
+body.dark {
+    --background-color: black;
+    --font-color: white;
+    --fa-icon-color: #AE38ED;
+    --accessory-color: #707070;
+    --grey-font: #707070;
 }
 
 .mt-1 { 
@@ -15,6 +51,10 @@
     margin-top: 3%;
 }
 
+.mt-4 { 
+    margin-top: 4%
+}
+
 .mt-5 {
     margin-top: 5%;
 }
@@ -22,28 +62,39 @@
 .hline { 
     width:100%; 
     height: 1px; 
-    background: #EEEEEE;
+    background: var(--accessory-color);
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
+    transition: .5s all;
+}
+
+.v-line {
+    border-left: 1px solid var(--accessory-color);
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .nav-container, .flex-container {
     display: flex;
-    flex-wrap: no-wrap;
 }
 
 .source-container { 
     flex-wrap: no-wrap;
 }
 
+.ref {
+    overflow: wrap;
+}
+
 .flex-right {
+    display: flex;
     margin-left: auto
 }
 
 .fonts { 
-    border: none;
-    outline: none;
+    display: none;
 }   
 
 a, a:hover, a:visited, a:active {
@@ -51,8 +102,14 @@ a, a:hover, a:visited, a:active {
 }
 
 .fa-book, .fa-moon {
-    color: #707070;
-    font-size: 20px;
+    color: var(--fa-icon-color);
+    font-size: max(20px, 1vw);
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.fa-moon {
+    padding-left: 8px;
 }
 
 .switch {
@@ -123,14 +180,25 @@ input:checked+.slider:before {
 .wordQuery {
     width: 100%;
     height: 100%;           
-    font-size: 20px;        /* change this later to scalable*/
+    font-size: max(20px, 1.2vw);        /* change this later to scalable*/
     font-family: serif;
     border: none;
     outline: none;
-    background-color: #f2f2f2;
+    background-color: var(--accessory-color);
     border-radius: 10px;
     text-indent: 12px;
     font-weight: bold;
+    transition: .5s all;
+}
+
+input, select, textarea {
+    color: var(--font-color);
+    transition: .5s all;
+}
+
+::placeholder{ 
+    color: var(--font-color);
+    transition: .5s all;
 }
 
 .search .fa-search {
@@ -141,6 +209,7 @@ input:checked+.slider:before {
 
 .fa-search {
     color: #AE38ED;
+    cursor: pointer;
 }
 
 .definitions, .meaning-group, li.def-bulleted .definition, .example {
@@ -163,26 +232,33 @@ li.def-bulleted .definition::before {
 }
 
 span.synonyms {
-    margin-left: 20px;
+    padding-left: 20px;
 }
 
 .greyfont {
-    font-size: 18px;
-    color: #909497;
+    font-size: max(18px, 0.8vw);
+    color: var(--grey-font);
+    transition: .5s all;
+}
+
+.definition {
+    font-size: max(18px, 0.8vw);
 }
 
 .font-sm { 
-    font-size: 14px;
+    font-size: max(14px, 0.7vw);
 }
 
 .src-link.font-sm {
+    color: var(--font-color);
     margin-left: 20px;
     margin-right: 5px;
+    transition: .5s all;
 }
 
 .partofspeech {
     padding-right: 30px;
-    font-size: 20px;
+    font-size: max(20px, 1vw);
     font-weight: bold;
     font-family:'Trebuchet MS';
 }
@@ -191,23 +267,23 @@ span.synonyms {
     position: relative;
     top: 3px;
     left: 3px;
-    font-size: 11px;
+    font-size: max(11px, 0.6vw);
 }
 
 .fa-circle-play {
     cursor: pointer;
     color: #AE38ED;
-    font-size: 60px;
+    font-size: max(30px, 3vw);
 }
 
 .queriedWord {
-    font-size: 60px;
+    font-size: calc(25px + 3vw);
     font-family: serif;
     font-weight: bold;
 }
 
 .pronunciation {
-    font-size: 21px;
+    font-size: max(21px, 1.5vw);
     font-family: serif;
     color: #AE38ED;
 }
@@ -215,4 +291,55 @@ span.synonyms {
 .playPronunciation {
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.partofspeech, .queriedWord, .definition {
+    color: var(--font-color);
+    transition: .5s all;
+}
+
+.custom-select {
+    position: relative;
+    right: 50px;
+}
+
+.select-selected {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 74px;
+    color: var(--font-color);
+
+    transition: .5s all;
+}  
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 6px;
+    right: -25px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #AE38ED transparent transparent transparent;
+}
+
+.options-container {
+    position: absolute;
+    z-index: 99;
+    background: var(--accessory-color);
+}
+
+.options-container.options-hidden {
+    display: none;
+}
+
+.option {
+    display: block;
+    white-space: nowrap;
+    overflow: clip;
+}
+
+.option:hover {
+    background-color: lightgrey;
 }

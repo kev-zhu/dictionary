@@ -1,4 +1,6 @@
-<nav class="nav-container mt-3">
+{% load static %}
+
+<nav class="nav-container">
     <div>
         <a href="{% url 'main' %}">
             <i class="fa-solid fa-book"></i>
@@ -6,24 +8,35 @@
     </div>
 
     <div class="flex-right">
-        <select class="fonts">
-            <option>
-                Serif
-            </option>
-            <option>
-                Sans Serif
-            </option>
-            <option>
-                Monospace
-            </option>
-        </select>
-        
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
+        <div class="custom-select">
+            <select class="fonts">
+                <option>
+                    Serif
+                </option>
+                <option>
+                    Sans Serif
+                </option>
+                <option>
+                    Monospace
+                </option>
+            </select>
+        </div>
+    
+        <div class="v-line"></div>
 
-        <i class="fa-regular fa-moon"></i>
+        <div class="switch-group">
+            <label class="switch">
+                <input class="checkbox" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+    
+            <i class="fa-regular fa-moon"></i>
+        </div>
     </div>
 
+
 </nav>
+
+
+<script src="{% static 'js/selectBar.js' %}"></script>
+<script src="{% static 'js/darkMode.js' %}"></script>
